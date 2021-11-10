@@ -6,6 +6,10 @@ public class MergeSort<E extends Comparable<E>> {
 
     private final Class<E> type;
 
+    /**
+     * Initializes the class.
+     * @param type Given class type, used for generics.
+     */
     public MergeSort(Class<E> type){
         this.type = type;
     }
@@ -13,7 +17,7 @@ public class MergeSort<E extends Comparable<E>> {
 
     /**
      * Takes in an array and recursively divides it into 2 arrays until there is one or two elements in each.
-     * It then merges them back together by calling merge
+     * It then merges them back together by calling merge.
      *
      * @param arr an arr
      * @return a target arr
@@ -54,14 +58,27 @@ public class MergeSort<E extends Comparable<E>> {
 
 
     /**
-     * Sorts the arr and merges it back into the target arr
+     * Prints the contents of the array in a readable format
+     * @param arr
+     */
+    public void printArr(E[] arr) {
+        System.out.print("[");
+        for (int i = 0; i < arr.length - 1; i ++){
+            System.out.print(arr[i].toString() + ", ");
+        }
+        System.out.print(arr[arr.length-1] + "]");
+    }
+
+
+    /**
+     * Sorts the arr and merges it back into the target arr.
      *
-     * @param leftArr  a left sub arr
-     * @param rightArr a right sub arr
-     * @return a target arr
+     * @param leftArr  a left sub arr.
+     * @param rightArr a right sub arr.
+     * @return a target arr.
      */
     @SuppressWarnings("unchecked")
-    public E[] merge(E[] leftArr, E[] rightArr) {
+    private E[] merge(E[] leftArr, E[] rightArr) {
         E[] resultArr = (E[]) java.lang.reflect.Array.newInstance(type, leftArr.length + rightArr.length); //for generics only
         int currentLeftIdx = 0;
         int currentRightIdx = 0;
@@ -89,13 +106,6 @@ public class MergeSort<E extends Comparable<E>> {
             currentResultIdx += 1;
         }
         return resultArr;
-    }
-
-
-    public void printArr(E[] arr) {
-        for (E e : arr){
-            System.out.println(e.toString());
-        }
     }
 
 
