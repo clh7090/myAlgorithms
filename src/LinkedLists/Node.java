@@ -1,4 +1,4 @@
-package LinkedListStructures;
+package LinkedLists;
 
 /**
  * An implementation of a LinkedListStructures.Node which contains data, and a pointer to another node. Commonly used in

@@ -1,3 +1,5 @@
+package Sorts;
+
 /**
  * A sorting class that Merge sorts any type array of E on a given comparator in O(n * log(n)) time.
  * @param <E> Generic Type E

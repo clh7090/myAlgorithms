@@ -1,7 +1,6 @@
-package LinkedListStructures;
+package LinkedLists;
 
 import Exception.StackException;
-import LinkedListStructures.Node;
 
 /**
  * A LinkedListStructures.Stack class that stores elements of type E in form of a stack which uses a Linked List

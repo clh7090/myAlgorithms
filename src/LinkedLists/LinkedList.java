@@ -1,4 +1,4 @@
-package LinkedListStructures;
+package LinkedLists;
 
 import Exception.LinkedListException;
 

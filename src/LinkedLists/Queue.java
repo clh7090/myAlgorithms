@@ -1,7 +1,6 @@
-package LinkedListStructures;
+package LinkedLists;
 
 import Exception.QueueException;
-import LinkedListStructures.Node;
 
 /**
  * A LinkedListStructures.Queue class that stores elements of type E in form of a LinkedListStructures.Queue which uses a Linked List
