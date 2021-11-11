@@ -1,7 +1,10 @@
+package LinkedListStructures;
+
 import Exception.StackException;
+import LinkedListStructures.Node;
 
 /**
- * A Stack class that stores elements of type E in form of a stack which uses a Linked List
+ * A LinkedListStructures.Stack class that stores elements of type E in form of a stack which uses a Linked List
  * <p>
  * Common time Complexities:
  * <p>
@@ -14,14 +17,14 @@ import Exception.StackException;
  *
  * @param <E> Generic Type E.
  */
-public class Stack<E extends Comparable<E>> {
+public class Stack<E> {
 
     private Class<E> type;
     private Node<E> top;
     private int size;
 
     /**
-     * Initializes a Stack of type E.
+     * Initializes a LinkedListStructures.Stack of type E.
      * @param type A generic type E.
      */
     public Stack(Class<E> type){
@@ -56,7 +59,7 @@ public class Stack<E extends Comparable<E>> {
 
     /**
      * Adds an element to the top of the stack.
-     * @param data data to be turned into a Node<E>.
+     * @param data data to be turned into a LinkedListStructures.Node<E>.
      */
     public void add(E data){
         Node<E> tempNode = new Node<>(data);

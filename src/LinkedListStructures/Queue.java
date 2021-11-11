@@ -1,7 +1,10 @@
+package LinkedListStructures;
+
 import Exception.QueueException;
+import LinkedListStructures.Node;
 
 /**
- * A Queue class that stores elements of type E in form of a Queue which uses a Linked List
+ * A LinkedListStructures.Queue class that stores elements of type E in form of a LinkedListStructures.Queue which uses a Linked List
  * <p>
  * Common time Complexities:
  * <p>
@@ -14,7 +17,7 @@ import Exception.QueueException;
  *
  * @param <E> Generic Type E.
  */
-public class Queue<E extends Comparable<E>> {
+public class Queue<E> {
 
     private Class<E> type;
     private Node<E> front;
@@ -22,7 +25,7 @@ public class Queue<E extends Comparable<E>> {
     private int size;
 
     /**
-     * Initializes a Queue of type E.
+     * Initializes a LinkedListStructures.Queue of type E.
      * @param type A generic type E.
      */
     public Queue(Class<E> type){
@@ -36,7 +39,7 @@ public class Queue<E extends Comparable<E>> {
      * @throws QueueException  when queue is empty.
      */
     public E peek() throws QueueException {
-        if (isEmpty()) throw new QueueException("You cannot peek at an empty Queue.");
+        if (isEmpty()) throw new QueueException("You cannot peek at an empty LinkedListStructures.Queue.");
         return front.data;
     }
 
@@ -57,7 +60,7 @@ public class Queue<E extends Comparable<E>> {
 
     /**
      * Adds an element to the end of the queue.
-     * @param data data to be turned into a Node<E>.
+     * @param data data to be turned into a LinkedListStructures.Node<E>.
      */
     public void add(E data){
         if (size == 0){

@@ -1,7 +1,7 @@
 package Exception;
 
 /**
- * An exception class for Queue
+ * An exception class for LinkedListStructures.Queue
  */
 public class QueueException extends Exception{
 

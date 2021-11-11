@@ -1,9 +1,11 @@
+package LinkedListStructures;
+
 /**
- * An implementation of a Node which contains data, and a pointer to another node. Commonly used in
- * LinkedList, Stack, Queue, etc implementations.
+ * An implementation of a LinkedListStructures.Node which contains data, and a pointer to another node. Commonly used in
+ * LinkedListStructures.LinkedList, LinkedListStructures.Stack, LinkedListStructures.Queue, etc implementations.
  * @param <E> Generic Type E
  */
-public class Node<E extends Comparable<E>> {
+public class Node<E> {
 
     public E data;
     public Node<E> next;
@@ -18,7 +20,7 @@ public class Node<E extends Comparable<E>> {
     }
 
     /**
-     * A readable format of a Node object.
+     * A readable format of a LinkedListStructures.Node object.
      * @return prettified String.
      */
     @Override
