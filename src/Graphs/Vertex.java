@@ -10,6 +10,7 @@ public class Vertex {
     private final String id;
     private final LinkedList<Edge> adjacencyList;
     private int numEdges;
+    private boolean isVisited;
 
     /**
      * A representation of a Vertex in a graph.
@@ -73,6 +74,24 @@ public class Vertex {
      */
     public LinkedList<Edge> getAdjacencyList() {
         return adjacencyList;
+    }
+
+
+    /**
+     * returns whether a vertex has been visited;
+     * @return true iff the vertex has been visited.
+     */
+    public boolean isVisited() {
+        return isVisited;
+    }
+
+
+    /**
+     * Sets the visited boolean
+     * @param visited bool
+     */
+    public void setVisited(boolean visited) {
+        isVisited = visited;
     }
 
 
