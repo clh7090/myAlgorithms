@@ -82,8 +82,23 @@ public class Graph {
     public void addEdge(int vertex1Index, int vertex2Index) {
         Vertex vertex1 = vertices[vertex1Index];
         Vertex vertex2 = vertices[vertex2Index];
-        vertex1.addEdge(vertex2.getId());
-        vertex2.addEdge(vertex1.getId());
+        vertex1.addEdge(vertex2);
+        vertex2.addEdge(vertex1);
+        numEdges++;
+    }
+
+
+    /**
+     * Adds an edge between 2 vertices with a cost.
+     *
+     * @param vertex1Index vertex 1
+     * @param vertex2Index vertex 2
+     */
+    public void addEdge(int vertex1Index, int vertex2Index, int cost) {
+        Vertex vertex1 = vertices[vertex1Index];
+        Vertex vertex2 = vertices[vertex2Index];
+        vertex1.addEdge(vertex2, cost);
+        vertex2.addEdge(vertex1, cost);
         numEdges++;
     }
 
