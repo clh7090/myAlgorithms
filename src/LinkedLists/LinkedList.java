@@ -24,15 +24,17 @@ public class LinkedList<E> {
 
     /**
      * Initializes a LinkedListStructures.LinkedList of type E.
+     *
      * @param type A generic type E.
      */
-    public LinkedList(Class<E> type){
+    public LinkedList(Class<E> type) {
         this.type = type;
     }
 
 
     /**
      * Reveals the data of the top element of the LinkedListStructures.LinkedList.
+     *
      * @return top element dats.
      * @throws LinkedListException when LinkedListStructures.LinkedList is empty.
      */
@@ -44,6 +46,7 @@ public class LinkedList<E> {
 
     /**
      * Removes and returns the top element.
+     *
      * @return top element.
      * @throws LinkedListException when LinkedListStructures.LinkedList is empty.
      */
@@ -51,51 +54,58 @@ public class LinkedList<E> {
         if (isEmpty()) throw new LinkedListException("You cannot pop from an empty LinkedListStructures.LinkedList.");
         Node<E> popped = front;
         front = front.next;
-        size --;
+        size--;
         return popped;
     }
 
 
     /**
      * Adds an element to the top of the LinkedListStructures.LinkedList.
+     *
      * @param data data to be turned into a LinkedListStructures.Node<E>.
      */
-    public void add(E data){
+    public void add(E data) {
         Node<E> tempNode = new Node<>(data);
         tempNode.next = front;
         front = tempNode;
-        size ++;
+        size++;
     }
 
 
     /**
      * Checks if the LinkedListStructures.LinkedList is empty.
+     *
      * @return true iff the LinkedListStructures.LinkedList is empty.
      */
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
 
     /**
      * Returns the size of the LinkedListStructures.LinkedList.
+     *
      * @return int.
      */
-    public int size(){
+    public int size() {
         return size;
     }
 
 
     /**
-     * Displays the LinkedListStructures.LinkedList in a nice format.
+     * Stores the LinkedList in a nice format.
+     *
+     * @return String
      */
-    public void display(){
+    @Override
+    public String toString() {
         Node<E> currentNode = front;
-        while (currentNode != null){
-            System.out.print(currentNode.data + " -> ");
+        StringBuilder builder = new StringBuilder();
+        while (currentNode != null) {
+            builder.append(currentNode.data).append(" -> ");
             currentNode = currentNode.next;
         }
-        System.out.print("null");
+        builder.append("null");
+        return builder.toString();
     }
-
 }
