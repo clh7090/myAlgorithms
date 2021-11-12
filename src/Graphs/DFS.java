@@ -17,7 +17,7 @@ public class DFS {
     private static void DFS(Vertex v) throws LinkedListException {
         v.setVisited(true);
         LinkedList<Edge> neighborList = v.getAdjacencyList();
-        while (neighborList != null){
+        while (neighborList.size() != 0){
             Vertex neighbor = neighborList.peek().getDestination();
             if (!(neighbor.isVisited())){ //neighbor not visited
                 DFS(neighbor);
