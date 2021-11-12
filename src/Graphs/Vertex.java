@@ -27,10 +27,10 @@ public class Vertex {
     /**
      * Adds an edge to this certain vertex.
      *
-     * @param destinationVertexIndex the vertex 'this' is connected to
+     * @param destinationId the vertex id 'this' is connected to
      */
-    public void addEdge(int destinationVertexIndex) {
-        adjacencyList.add(new Edge(this, new Vertex(String.valueOf(destinationVertexIndex))));
+    public void addEdge(String destinationId) {
+        adjacencyList.add(new Edge(this, new Vertex(destinationId)));
         numEdges++;
     }
 

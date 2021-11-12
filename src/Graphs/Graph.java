@@ -1,5 +1,6 @@
 package Graphs;
 
+
 /**
  * A Graph class that stores vertices and their edges.
  */
@@ -8,6 +9,7 @@ public class Graph {
     private final Vertex[] vertices;
     private final int numVertices;
     private int numEdges;
+    private int currentVertexCount; // used if vertices are added manually
 
 
     /**
@@ -15,15 +17,29 @@ public class Graph {
      *
      * @param numVertices int
      */
-    public Graph(int numVertices) {
+    public Graph(int numVertices, boolean addVerticesAutomatically) {
         this.numVertices = numVertices;
         this.numEdges = 0;
 
         this.vertices = new Vertex[numVertices];
 
-        for (int v = 0; v < this.numVertices; v++) { // MAKE EACH VERTEX CONTAIN A LINKED LIST
-            vertices[v] = new Vertex(String.valueOf(v));
+        if (addVerticesAutomatically){
+            for (int v = 0; v < this.numVertices; v++) { // MAKE EACH VERTEX CONTAIN A LINKED LIST
+                vertices[v] = new Vertex(String.valueOf(v));
+            }
         }
+        currentVertexCount = 0;
+
+    }
+
+
+    /**
+     * Adds a vertex manually to the vertex list
+     * @param id id
+     */
+    public void addVertex(String id){
+        vertices[currentVertexCount] = new Vertex(id);
+        currentVertexCount ++;
     }
 
 
@@ -64,8 +80,10 @@ public class Graph {
      * @param vertex2Index vertex 2
      */
     public void addEdge(int vertex1Index, int vertex2Index) {
-        vertices[vertex1Index].addEdge(vertex2Index);
-        vertices[vertex2Index].addEdge(vertex1Index);
+        Vertex vertex1 = vertices[vertex1Index];
+        Vertex vertex2 = vertices[vertex2Index];
+        vertex1.addEdge(vertex2.getId());
+        vertex2.addEdge(vertex1.getId());
         numEdges++;
     }
 
@@ -80,7 +98,7 @@ public class Graph {
         StringBuilder builder = new StringBuilder();
         builder.append(numVertices).append(" vertices, ").append(numEdges).append(" edges ").append("\n");
         for (int v = 0; v < numVertices; v++) {
-            builder.append(v).append(" : ");
+            builder.append(vertices[v].getId()).append(" : ");
             builder.append(vertices[v].getAdjacencyList()).append("\n");
         }
         return builder.toString();

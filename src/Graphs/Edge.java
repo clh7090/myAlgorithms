@@ -73,7 +73,7 @@ public class Edge {
      */
     @Override
     public String toString() {
-        return "Vertex: " + destination.getId() + " Cost " + cost;
+        return "V: " + destination.getId() + " $ " + cost;
     }
 
 
