@@ -1,6 +1,6 @@
 package Graphs;
 
-import Exception.LinkedListException;
+import Exception.*;
 /**
  * A Graph class that stores vertices and their edges.
  */
@@ -118,8 +118,6 @@ public class Graph {
         }
         return builder.toString();
     }
-
-
 
 
 }

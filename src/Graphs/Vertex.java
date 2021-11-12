@@ -11,6 +11,7 @@ public class Vertex {
     private final LinkedList<Edge> adjacencyList;
     private int numEdges;
     private boolean isVisited;
+    private int distance;
 
     /**
      * A representation of a Vertex in a graph.
@@ -92,6 +93,24 @@ public class Vertex {
      */
     public void setVisited(boolean visited) {
         isVisited = visited;
+    }
+
+
+    /**
+     * getter for distance
+     * @return int
+     */
+    public int getDistance() {
+        return distance;
+    }
+
+
+    /**
+     * setter for distance
+     * @param distance int
+     */
+    public void setDistance(int distance) {
+        this.distance = distance;
     }
 
 

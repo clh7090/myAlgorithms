@@ -3,9 +3,18 @@ package Graphs;
 import LinkedLists.LinkedList;
 import Exception.LinkedListException;
 
+/**
+ * Depth First Search Algorithm for graphs.
+ */
 public class DFS {
 
 
+    /**
+     * A helper method to run DFS on vertex v.
+     * @param graph graph
+     * @param startingVertex vertex
+     * @throws LinkedListException e
+     */
     public static void DFSRun(Graph graph,Vertex startingVertex ) throws LinkedListException {
         Vertex[] vertices = graph.getVertices();
         for (Vertex v : vertices){
@@ -14,6 +23,12 @@ public class DFS {
         DFS(startingVertex);
     }
 
+
+    /**
+     * DFS Main Recursive method for traversing a graph
+     * @param v vertex
+     * @throws LinkedListException e
+     */
     private static void DFS(Vertex v) throws LinkedListException {
         v.setVisited(true);
         LinkedList<Edge> neighborList = v.getAdjacencyList();
@@ -25,4 +40,7 @@ public class DFS {
             neighborList.pop();
         }
     }
+
+
 }
+
