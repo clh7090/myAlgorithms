@@ -10,17 +10,17 @@ public class DFS {
 
 
     /**
-     * A helper method to run DFS on vertex v.
+     * A helper method to run traverse on vertex v.
      * @param graph graph
      * @param startingVertex vertex
      * @throws LinkedListException e
      */
-    public static void DFSRun(Graph graph,Vertex startingVertex ) throws LinkedListException {
+    public static void DFS(Graph graph,Vertex startingVertex ) throws LinkedListException {
         Vertex[] vertices = graph.getVertices();
         for (Vertex v : vertices){
             v.setVisited(false);
         }
-        DFS(startingVertex);
+        traverse(startingVertex);
     }
 
 
@@ -29,13 +29,13 @@ public class DFS {
      * @param v vertex
      * @throws LinkedListException e
      */
-    private static void DFS(Vertex v) throws LinkedListException {
+    private static void traverse(Vertex v) throws LinkedListException {
         v.setVisited(true);
         LinkedList<Edge> neighborList = v.getAdjacencyList();
         while (neighborList.size() != 0){
             Vertex neighbor = neighborList.peek().getDestination();
             if (!(neighbor.isVisited())){ //neighbor not visited
-                DFS(neighbor);
+                traverse(neighbor);
             }
             neighborList.pop();
         }
